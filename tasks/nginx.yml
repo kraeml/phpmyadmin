@@ -1,0 +1,17 @@
+---
+- name: check if nginx is installed
+  stat:
+    path: /etc/nginx/conf.d
+  changed_when: false
+  register: nginx_conf_dir
+
+- name: ensure phpmyadmin configuration for nginx is installed
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/phpmyadmin
+  when: nginx_conf_dir.stat.exists
+
+- name: Enable site
+  file: src=/etc/nginx/sites-available/{{ site_name }} dest=/etc/nginx/sites-enabled/{{ site_name }} state=link
+  notify: Reload Nginx
+
