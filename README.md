@@ -1,32 +1,36 @@
-# Ansible Role: phpMyAdmin
+Role Name
+=========
+gwenlei.phpmyadmin
 
-An Ansible role that installs phpMyAdmin on Ubuntu.
+Requirements
+------------
+ubuntu16.04 xenial
 
-## Requirements
+Role Variables
+--------------
+defaults/main.yml
 
-For phpMyAdmin to work a web server (e.g. nginx), php and MySQL have to be installed.
+phpmyadmin_php_fpm_socket: php-fpm
+phpmyadmin_server_host: localhost
+phpmyadmin_server_auth_type: config
+phpmyadmin_server_user: root
+phpmyadmin_server_password: root
 
-## Role Variables
+Dependencies
+------------
+none
 
-Available variables are listed below, along with default values:
+Example Playbook
+----------------
 
-    phpmyadmin_php_fpm_socket: php-fpm
-
-    phpmyadmin_server_host: localhost
-    phpmyadmin_server_auth_type: config
-    phpmyadmin_server_user: root
-    phpmyadmin_server_password: root
-
-## Dependencies
-
-None
-
-## Example Playbook
-
-    - hosts: all
+    - hosts: servers
       roles:
-        - { role: mjanser.phpmyadmin }
+         - { role: gwenlei.phpmyadmin }
 
-## License
-
+License
+-------
 MIT
+
+Author Information
+------------------
+onecloud
