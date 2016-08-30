@@ -15,6 +15,7 @@ phpmyadmin_server_host: localhost
 phpmyadmin_server_auth_type: config
 phpmyadmin_server_user: root
 phpmyadmin_server_password: root
+client_max_body_size: 64M
 
 Dependencies
 ------------
