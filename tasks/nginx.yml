@@ -11,6 +11,10 @@
     dest: /etc/nginx/sites-available/phpmyadmin
   when: nginx_conf_dir.stat.exists
 
+- name: Disable default site
+  file: path=/etc/nginx/sites-enabled/default state=absent
+  notify: reload nginx
+
 - name: Enable site
   file: src=/etc/nginx/sites-available/phpmyadmin dest=/etc/nginx/sites-enabled/phpmyadmin state=link
   notify: reload nginx
