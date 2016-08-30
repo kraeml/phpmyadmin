@@ -1,4 +1,10 @@
 ---
+- name: Install Nginx
+  apt: name=nginx state=present
+
+- name: Start Nginx service
+  service: name=nginx state=started enabled=true
+
 - name: ensure phpmyadmin ppa repository is installed
   apt_repository:
     repo: "ppa:nijel/phpmyadmin"

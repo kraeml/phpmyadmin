@@ -1,7 +1,4 @@
 ---
-- name: Install Nginx
-  apt: name=nginx state=present
-
 - name: check if nginx is installed
   stat:
     path: /etc/nginx/conf.d
@@ -15,6 +12,6 @@
   when: nginx_conf_dir.stat.exists
 
 - name: Enable site
-  file: src=/etc/nginx/sites-available/{{ site_name }} dest=/etc/nginx/sites-enabled/{{ site_name }} state=link
+  file: src=/etc/nginx/sites-available/phpmyadmin dest=/etc/nginx/sites-enabled/phpmyadmin state=link
   notify: Reload Nginx
 

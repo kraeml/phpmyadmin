@@ -10,7 +10,6 @@ Role Variables
 --------------
 defaults/main.yml
 
-site_name: example.com
 phpmyadmin_php_fpm_socket: php-fpm
 phpmyadmin_server_host: localhost
 phpmyadmin_server_auth_type: config
