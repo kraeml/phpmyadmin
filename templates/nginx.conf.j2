@@ -21,6 +21,11 @@ server {
     try_files $uri $uri/ /index.php?$args;
   }
 
+  location ~ ^/~(.+?)(/.*)?$ {
+    alias /home/$1/www$2;
+    autoindex on;
+  }
+
   location ~ /\. {
     deny all;
   }
