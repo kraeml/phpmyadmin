@@ -4,6 +4,9 @@ server {
   listen 80 default_server;
   server_name localhost;
   root /usr/share/phpmyadmin;
+  
+  # http://serverfault.com/questions/269420/disable-caching-when-serving-static-files-with-nginx-for-development
+  sendfile off;
 
   client_max_body_size {{ client_max_body_size }};
 
@@ -24,6 +27,7 @@ server {
   location ~ ^/~(.+?)(/.*)?$ {
     alias /home/$1/www$2;
     autoindex on;
+
   }
 
   location ~ /\. {
