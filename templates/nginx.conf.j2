@@ -20,14 +20,13 @@ server {
   }
 
   location / {
-    index index.php index.html;
+    index index.php index.html index.nginx-debian.html;
     try_files $uri $uri/ /index.php?$args;
   }
 
   location ~ ^/~(.+?)(/.*)?$ {
     alias /home/$1/www$2;
     autoindex on;
-
   }
 
   location ~ /\. {
