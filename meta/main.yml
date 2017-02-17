@@ -1,19 +1,16 @@
 galaxy_info:
-  author: gwenlei
+  author: kraeml
   description: install phpmyadmin
-  company: onecloud
-  
+  company: rdf
+
   license: MIT
-  
+
   min_ansible_version: 1.2
 
   platforms:
   - name: Ubuntu
     versions:
     - xenial
-  
-  galaxy_tags: 
+
+  galaxy_tags:
      - phpmyadmin
-
-dependencies: [gwenlei.wordpress-php7]
-

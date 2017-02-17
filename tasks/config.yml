@@ -3,3 +3,9 @@
   template:
     src: config.php.j2
     dest: /etc/phpmyadmin/conf.d/custom.php
+
+- name: ensure phmydamin link exists
+  file:
+    src: /usr/share/phpmyadmin
+    dest: /var/www/html/phpmyadmin
+    state: link
